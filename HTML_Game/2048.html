@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>2048</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="2048.css"/>
+    </head>
+    <body>
+        <h1>2048</h1>
+        <hr>
+        <div id="board"></div>
+        <div class="game-container" id="game-container">
+        </div>
+        <div class="button">
+            <button class="But" onclick="location.reload()">Restart</button>
+            <button class="But" onclick="location.href='easy.html'">Menu</button>
+        </div>
+        <div id="customAlert" class="alerta">
+            <p>Congratulations! You've matched all the cards!</p>
+            <button id="nextGameButton" onclick="location.href='wordleasy.html'">下一個遊戲</button>
+        </div>
+        <script defer src="2048.js"></script>
+    </body>
+</html>

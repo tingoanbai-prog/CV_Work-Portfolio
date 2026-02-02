@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="easy.css"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <title>闖關遊戲 easy</title>
+    </head>
+    <body>
+        <div class="illustration">
+            <h1>點擊圖片閱讀詳細規則</h1>
+        </div>
+        <div class="container">
+            <div class="firstgame">
+                <img src="one.png" alt="one" class="img-one">
+                <img src="majong.png" alt="majong"class="img-maj" onclick="openModal1()">
+            </div>
+            <div class="secondgame">
+                <img src="two.png" alt="two" class="img-two">
+                <img src="2048.png" alt="2048" class="img-2048" onclick="openModal2()">
+            </div>
+            <div class="thirdgame">
+                <img src="three.png" alt="three" class="img-three">
+                <img src="wordle.jpg" alt="wordel" class="img-wor" onclick="openModal3()">
+            </div>
+            <div class="fourthgame">
+                <img src="four.png" alt="four" class="img-four">
+                <img src="lottery.png" alt="lottery" class="img-lot" onclick="openModal4()">
+            </div>
+        </div>
+        <div id="modal1" class="modal1">         
+            <div class="rule1">
+                <h2>需要完成4*4 matching game，每翻開兩張牌會比較兩張牌是否一樣，若失敗需要重新選擇兩張。</h2>
+            </div>
+            <img src="cross.png" alt="Close" class="close-button" onclick="closeModal1()">
+        </div>
+        <div id="modal2" class="modal2">         
+            <div class="rule2">
+                <h2>利用鍵盤上下左右進行2048遊戲，需要完成2048才算通關。若是失敗則需要再次挑戰。</h2>
+            </div>
+            <img src="cross.png" alt="Close" class="close-button" onclick="closeModal2()">
+        </div>
+        <div id="modal3" class="modal3">         
+            <div class="rule3">
+                <h2>在8次機會內猜中5字英文單字。灰色代表沒有這個單字，黃色代表有這個單字但位置錯，綠色代表單字對且位置對。若是失敗則需要重新進行。</h2>
+            </div>
+            <img src="cross.png" alt="Close" class="close-button" onclick="closeModal3()">
+        </div>
+        <div id="modal4" class="modal4">         
+            <div class="rule4">
+                <h2>在1~25的數字內猜中超過兩個數字才算過關</h2>
+            </div>
+            <img src="cross.png" alt="Close" class="close-button" onclick="closeModal4()">
+        </div>
+        <div class="btn">
+            <button class="start" onclick="location.href='match.html'">start</button>
+            <button class="start" onclick="location.href='start.html'">back</button>
+        </div>
+        <script src="easy.js"></script>
+    </body>
+    </html>

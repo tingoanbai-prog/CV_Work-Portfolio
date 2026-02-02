@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lottery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="lottery.css"/>
+    </head>
+    <body>
+        <section class="lot">
+            <h1>Lottery Draw</h1>
+        </section>
+        <div class="ballcontainer">
+            <div id="ball1" class="ball">00</div>
+            <div id="ball2" class="ball">00</div>
+            <div id="ball3" class="ball">00</div>
+            <div id="ball4" class="ball">00</div>
+            <div id="ball5" class="ball">00</div>
+            <div id="ball6" class="ball">00</div>
+        </div>
+        <button id="startButton">Start Lottery</button>
+        <div class="input">
+            <h2>Enter 6 numbers between 1~49:</h2><br>
+            <input type="text" id="numberInput" maxlength="2" placeholder="Type numbers" />
+            <button id="submitButton">Submit Number</button>
+        </div>
+        
+        <div class="display" id="numbersDisplay"></div>
+        <script src="lottery.js"></script>
+    </body>

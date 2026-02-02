@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}    
+body, html {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/*  title */
+.lot {
+    margin-bottom: 30px; 
+}
+
+.lot h1 {
+    font-size: 2em;
+    color: white;
+}
+
+/* Container*/
+.ballcontainer {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; 
+}
+
+/* ball */
+.ball {
+    width: 80px;
+    height: 80px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease; 
+}
+
+/* Add hover effect */
+.ball:hover {
+    transform: scale(1.1);
+}
+
+/* start button */
+#startButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4caf50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 30px;
+}
+
+/* Button hover*/
+#startButton:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+.input{
+    margin-bottom: 30px;
+}
+.input h2{
+    font-size: 18px;
+    color: white;
+}
+input[type="text"]{
+    border-radius: 5px;
+    height: 28px;
+}
+#submitButton{
+    padding:3px;
+    font-size: 18px;
+    background-color: #4caf50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.display{
+    height: 300px;
+    width: 500px;
+    background: #f8db91;
+    display: grid;
+    place-content: center;
+    font-size: 24px;
+    color: #333;
+    gap:10px;
+    text-align: center;
+}
+.result-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.result-div button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}

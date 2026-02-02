@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+h1{
+    color: white;
+}
+hr{
+    width: 500px;
+}
+#board{
+    width: 400px;
+    height: 400px;
+    background-color: #cdc1b5;
+    border: 6px solid #bbada0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+} 
+.tile{
+    width: 90px;
+    height: 90px;
+    border: 5px solid #bbada0;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.x2{
+    background-color: #eee4da;
+    color: black;
+}
+.x4{
+    background-color: #e0cbb5;
+    color: black;
+}
+.x8{
+    background-color: #f3ac65;
+    color: black;
+}
+.x16{
+    background-color: #e98c5d;
+    color: black;
+}
+.x32{
+    background-color: #f37120;
+    color: black;
+}
+.x64{
+    background-color: #ea6a56;
+    color: black;
+}
+.x128{
+    background-color: #f55b2d;
+    color: black;
+}
+.x256{
+    background-color: #f52323;
+    color: black;
+}
+.x512{
+    background-color: #26ed4a;
+    color: black;
+}
+.x1024{
+    background-color: #7965ef;
+    color: black;
+}
+.x2048{
+    background-color: #f9f341;
+    color: black;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    gap: 80px;
+    width: 600px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.But{
+    height: 30px;
+    width: 150px;
+    font-size: 1.5rem;
+    background-color: #72b86f;
+    border: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.alerta {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    background: rgb(118, 115, 182);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+.alerta.active {
+    display: block;
+}
+.alerta p{
+    text-align: center;
+    font-size: 1.5rem;
+    align-items: center;
+}
+#nextGameButton{
+    height: 30px;
+    width: 150px;
+    font-size: 1.5rem;
+    background-color: #72b86f;
+    border: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

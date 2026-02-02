@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: url('back.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: white;
+}
+
+#board {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 3.5em);
+  grid-gap: 0.5em;
+}
+
+.letter {
+  background-color: #ccc;
+  border-radius: 0.2em;
+  font-size: 3.5em;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5em;
+  box-sizing: border-box; /* 確保 padding 不影響格子大小 */
+  overflow: hidden; /* 防止溢出 */
+  white-space: nowrap; /* 防止換行 */
+  align-items: center;  /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
+}
+.input-letter {
+  font-size: 1.5em; /* 調整字母大小 */
+  border-radius: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: black; /* 字母顏色 */
+  font-weight: bold; /* 字母粗細 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 添加陰影效果 */
+
+}
+.key {
+  font-size: 1.5em;
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0.2em;
+  background-color: #ccc;
+  color: #000000;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.key:hover {
+  background-color: #bbb;
+}
+.letterGrey{
+  background-color: grey;
+}
+.letterYellow{
+  background-color: yellow;
+}
+.letterGreen{
+  background-color: green;
+}
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  
+}
+
+.restart-button,.result-button1{
+margin-top: 1em;
+padding: 0.5em 1em;
+font-size: 1.2em;
+border: none;
+border-radius: 5px;
+background-color: #4CAF50;
+color: white;
+cursor: pointer;
+}

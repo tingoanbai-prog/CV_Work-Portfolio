@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+.container {
+    text-align: center;
+}
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.play-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ff5722;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.play-button:hover {
+    background-color: #e64a19;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    background: rgb(101, 97, 171);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;/*將預設的div display先設成none使其先不顯示於畫面中*/
+}
+.modal h2{
+    top: 0%;
+    font-size: 1rem;
+    text-align: center;
+}
+.modal.active {
+    display: block;/*當預設div的class從modal變成modal.active時display則是block，使其顯示於螢幕上*/
+}
+.modal-header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.difficulty{
+    
+    display: grid;
+    position: absolute;
+    top: 20%;
+    left:5%;
+    right: 5%;
+    gap: 10px;
+}
+.dif-button{
+    height: 30px;
+    width: 150px;
+    margin-left: 15%;
+    font-size: 1.5rem;
+    background-color: #72b86f;
+    border: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

@@ -1,0 +1,128 @@
+body{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.wrapper{
+    height: 400px;
+    width: 400px;
+    background: #7dd387;
+    border-radius: 10px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,80px);
+    grid-template-rows: repeat(4,80px);
+    grid-gap: 20px;
+    place-content: center;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.card{
+    cursor: pointer;
+    background: #d3ecbb;        
+}
+.card .backview{
+    display: none;
+}
+.frontview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card .backview img{
+    max-width: 45px;
+    max-height: 55px;
+}
+.card .frontview img{
+    max-width: 45px;
+    max-height: 55px;
+}
+.card.flipped {
+    transform: rotateY(180deg); /* Example of a flip animation */
+    transition: transform 0.5s ease-in-out;
+}
+.card.shake{
+    animation: shake 0.2s ease-in-out;
+}
+@keyframes shake {
+    0%, 100%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-13px);
+    }
+    40%{
+        transform: translateX(-13px);
+    }
+    60%{
+        transform: translateX(-8px);
+    }
+    80%{
+        transform: translateX(-8px);
+    }
+}
+.card.shake.end {
+    animation: none; /* Reset the animation after it finishes */
+}
+.card.matched {
+    pointer-events: none; /* Disable clicks on matched cards */
+    background: #98fb98; /* Change background to indicate a match */
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    gap: 80px;
+    width: 600px;
+    margin-top: -150px;
+}
+.But{
+    height: 30px;
+    width: 150px;
+    font-size: 1.5rem;
+    background-color: #72b86f;
+    border: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.alerta {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    background: rgb(118, 115, 182);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+.alerta.active {
+    display: block;
+}
+.alerta p{
+    text-align: center;
+    font-size: 1.5rem;
+    align-items: center;
+}
+#nextGameButton{
+    height: 30px;
+    width: 150px;
+    margin-left: 14%;
+    font-size: 1.5rem;
+    background-color: #72b86f;
+    border: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="start.css"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <title>闖關遊戲</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>闖關遊戲</h1>
+            <button class="play-button" onclick="openModal()">PLAY</button> <!--設定此button點擊時會觸發openModal function -->
+        </div>
+    
+        <div id="modal" class="modal">
+            
+            <div class="difficulty">
+                <h2>在遊戲中你需要連續通過四個遊戲的考驗才能夠闖關成功</h2>
+                <button class="dif-button" onclick="location.href='easy.html'">Easy</button>
+                <button class="dif-button" onclick="location.href='hard.html'">Hard</button>
+            </div>
+            <img src="cross.png" alt="Close" class="close-button" onclick="closeModal()">
+            <!--div中設計一個叉叉圖片用於關閉視窗，點擊時會觸發closeModal function-->
+        </div>
+    
+        <script src="start.js"></script>
+    </body>
+    </html>
