@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>2048</title>
+        <meta name="viewport" content="width=1200">
+        <link rel="stylesheet" href="2048.css"/>
+    </head>
+    <body>
+        <h1>2048</h1>
+        <hr>
+        <div class="game-layout">
+            <div id="board"></div>
+            <div class="game-container" id="game-container">
+            <div class="controls">
+            <div class="controller-row">
+                <button class="btn-control" id="btn-up">↑</button>
+            </div>
+            <div class="controller-row">
+                <button class="btn-control" id="btn-left">←</button>
+                <button class="btn-control" id="btn-down">↓</button>
+                <button class="btn-control" id="btn-right">→</button>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="button">
+            <button class="But" onclick="location.reload()">Restart</button>
+            <button class="But" onclick="location.href='index.html'">Back</button>
+        </div>
+        <div id="customAlert" class="alerta">
+            <p>Challenge Complete! You earned $100 and 20 Reputation.</p>
+            <button id="nextGameButton" onclick="location.href='index.html'">Return Map</button>
+        </div>
+        
+        <script defer src="2048.js"></script>
+    </body>
+</html>

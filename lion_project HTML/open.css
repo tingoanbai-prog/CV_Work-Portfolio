@@ -1,0 +1,256 @@
+:root {
+            --vintage-paper: #e6d5b8;
+            --dark-wood: #3e2723;
+            --gold: #d4af37;
+            --accent-red: #8b0000;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: var(--dark-wood);
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 遊戲主容器 */
+        #game-container {
+            position: relative;
+            width: 900px;
+            background: var(--vintage-paper);
+            border: 12px solid var(--dark-wood);
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* 標題與狀態欄 */
+        .header {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0,0,0,0.05);
+            border-bottom: 2px solid var(--dark-wood);
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background: var(--dark-wood);
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* 地圖區域 */
+        #map-canvas {
+            position: relative;
+            width: 900px;
+            height: 600px;
+            background: url('mapbackground.png') no-repeat center; /* 替換為你的地圖圖片路徑 */
+            background-size: cover;
+            cursor: crosshair;
+        }
+
+        /* SVG 路徑層 */
+        #route-svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        .route-line {
+            fill: none;
+            stroke: var(--accent-red);
+            stroke-width: 3;
+            stroke-dasharray: 8, 8;
+            transition: 1s;
+        }
+
+        /* 主角 Icon */
+        #character {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url('ahtai.png') no-repeat center;
+            background-size: contain;
+            z-index: 100;
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translate(-50%, -80%);
+            filter: drop-shadow(0 5px 8px rgba(0,0,0,0.4));
+        }
+
+        /* 景點節點 */
+        .spot {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            border: 3px solid white;
+            border-radius: 50%;
+            z-index: 50;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .spot:hover { background: white; transform: translate(-50%, -50%) scale(1.2); }
+
+        .spot-label {
+            position: absolute;
+            top: 55px;
+            background: var(--dark-wood);
+            color: white;
+            padding: 3px 10px;
+            font-size: 12px;
+            white-space: nowrap;
+            border-radius: 5px;
+        }
+
+        /* 劇情彈窗 */
+        #story-modal {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            background: white;
+            border: 6px double var(--dark-wood);
+            z-index: 200;
+            box-shadow: 0 0 100px rgba(0,0,0,0.9);
+        }
+
+        #modal-img { width: 100%; height: 230px; object-fit: cover; border-bottom: 3px solid var(--dark-wood); }
+        .modal-body { padding: 25px; text-align: center; }
+        .reward-box { color: #2e7d32; font-weight: bold; margin: 15px 0; font-size: 1.1rem; }
+        .btn { background: var(--dark-wood); color: var(--gold); padding: 12px 25px; border: none; cursor: pointer; font-size: 1rem; border-radius: 4px; }
+        .btn:hover { background: #5d4037; }
+
+        #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 150; }
+.reset-btn {
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    border-radius: 3px;
+}
+/* 全螢幕證書容器 */
+#certificate-overlay {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); /* 背景變暗 */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 證書本體 */
+.cert-paper {
+    width: 90%;
+    max-width: 800px;
+    height: 600px;
+    background-color: #fdfae7;
+    background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png'); /* 羊皮紙紋理 */
+    border: 15px double #cba35b; /* 雙金邊 */
+    padding: 40px;
+    box-shadow: 0 0 50px rgba(0,0,0,1);
+    text-align: center;
+    position: relative;
+    font-family: 'Georgia', serif;
+    color: #3e2f22;
+}
+
+.cert-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #8b4513;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.cert-game-name {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.cert-content {
+    font-size: 22px;
+    line-height: 1.6;
+    margin: 40px 0;
+}
+
+.cert-score-box {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 30px 0;
+    background: rgba(203, 163, 91, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #cba35b;
+}
+
+.cert-score-item span { font-size: 16px; color: #666; display: block; }
+.cert-score-item strong { font-size: 32px; color: #b8860b; }
+
+.cert-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.close-cert-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+/* 紅色傳說印章 */
+.legend-seal {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #b22222;
+    border-radius: 50%;
+    color: #b22222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    transform: rotate(-15deg); /* 稍微傾斜更有蓋章感 */
+    opacity: 0.8;
+    box-shadow: inset 0 0 5px #b22222;
+    background: rgba(178, 34, 34, 0.05);
+    line-height: 1.2;
+}
+
+/* 讓證書內容更平衡 */
+.cert-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 改為垂直置中 */
+    margin-top: 40px;
+    padding: 0 20px;
+}

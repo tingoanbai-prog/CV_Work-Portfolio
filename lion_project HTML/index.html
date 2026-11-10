@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>Talat Noi: Path to Prosperity</title>
+    <link rel="stylesheet" href="open.css">
+
+</head>
+<body>
+
+<div id="game-container">
+    <div class="header">
+        <h1>Talat Noi: Path to Prosperity</h1>
+    </div>
+
+    <div class="stats-bar">
+        <span>Merchant: Ah Tai</span>
+        <span>Wealth: $<span id="wealth">0</span></span>
+        <span>Reputation: <span id="rep">0</span></span>
+        <button onclick="resetGame()" class="reset-btn">Reset Game</button>
+    </div>
+
+    <div id="map-canvas">
+        <svg id="route-svg">
+            <path id="path-line" class="route-line" d="" />
+        </svg>
+
+        <div id="character" style="top: 500px; left: 200px;"></div>
+
+        <div class="spot" style="top: 500px; left: 200px;" onclick="handleInteraction('start', this)">
+            <div class="spot-label">Start Point</div>
+        </div>
+
+        <div class="spot" style="top: 540px; left: 580px;" onclick="handleInteraction('solheng', this)">
+            <div class="spot-label">Sol Heng Tai Mansion</div>
+        </div>
+
+        <div class="spot" style="top: 320px; left: 400px;" onclick="handleInteraction('bar32', this)">
+            <div class="spot-label">32Bar</div>
+        </div>
+
+        <div class="spot" style="top: 400px; left: 750px;" onclick="handleInteraction('vanich', this)">
+            <div class="spot-label">Vanich House</div>
+        </div>
+
+        <div class="spot" style="top: 150px; left: 150px;" onclick="handleInteraction('naam', this)">
+            <div class="spot-label">NAAM 1608</div>
+        </div>
+
+        <div class="spot" style="top: 90px; left: 500px;" onclick="handleInteraction('museum', this)">
+            <div class="spot-label">Talat Noi Museum</div>
+        </div>
+    </div>
+</div>
+
+<div id="overlay"></div>
+<div id="story-modal">
+    <img id="modal-img" src="" alt="Location">
+    <div class="modal-body">
+        <h2 id="modal-title">Title</h2>
+        <p id="modal-desc">Description</p>
+        <div id="reward-text" class="reward-box"></div>
+        <button class="btn" onclick="closeModal()">Continue Your Business</button>
+    </div>
+</div>
+<div id="certificate-overlay">
+    <button class="close-cert-btn" onclick="document.getElementById('certificate-overlay').style.display='none'">[ 點擊返回地圖 / Close ]</button>
+    
+    <div class="cert-paper">
+        <h1 class="cert-title">CERTIFICATE OF LEGEND</h1>
+        <div class="cert-game-name">The Pier of Dreams: Talat Noi</div>
+        
+        <div class="cert-content">
+            This is to certify that the ambitious merchant has successfully 
+            conquered the markets of the riverbank, amassing a great fortune 
+            and earning the eternal respect of the community.
+        </div>
+
+        <div class="cert-score-box">
+            <div class="cert-score-item">
+                <span>FINAL WEALTH</span>
+                <strong id="cert-wealth">0</strong>
+            </div>
+            <div class="cert-score-item">
+                <span>REPUTATION</span>
+                <strong id="cert-rep">0</strong>
+            </div>
+        </div>
+
+        <div class="cert-footer">
+            <div style="text-align: left;">
+                <p>Date: <span id="cert-date"></span></p>
+                <p style="font-family: 'Brush Script MT', cursive; font-size: 26px; color: #8b4513;">The Council of Elders</p>
+                <p style="font-family: 'Brush Script MT', cursive; font-size: 26px; color: #ff0000;">By Lion Travel</p>
+            </div>
+            
+            <div class="legend-seal">
+                LEGEND<br>CERTIFIED
+            </div>
+        </div>
+    </div>
+</div>
+     <script src="open.js"></script>
+</body>
+</html>
