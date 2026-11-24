@@ -1,0 +1,116 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: rgba(100, 100, 100, 0.1) 0px 5px 25px 10px;
+}
+
+.form-group{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    margin: 0;
+    font-family: 'Arial', sans-serif; 
+}
+
+/* 容器樣式 */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #ffffff; 
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    border-top: 5px solid #1d428a;
+}
+
+/* 標題樣式 */
+h2 {
+    text-align: center; 
+    margin-bottom: 30px;
+    color: #c8102e;
+    font-size: 2em; 
+    font-weight: bold; 
+}
+
+/* 表單組樣式 */
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* 輸入框樣式 */
+.form-group input {
+    width: 100%; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da; 
+    border-radius: 4px;
+    box-sizing: border-box; /
+}
+
+/* 按鈕和連結樣式 */
+.form-btn {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 20px;
+}
+
+.form-btn input[type="submit"] {
+    padding: 10px; 
+    font-size: 16px; 
+    color: #fff; 
+    background-color: #1d428a; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+.form-btn input[type="submit"]:hover {
+    background-color: #c8102e; 
+}
+
+.form-btn a {
+    color: #1d428a; 
+    text-decoration: none; 
+    margin-top: 10px; 
+    text-align: center; 
+    font-weight: bold; 
+}
+
+.form-btn a:hover {
+    text-decoration: underline; 
+}
+
+/* 警告訊息樣式 */
+.alert {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    color: #721c24; 
+    background-color: #f8d7da; 
+    border: 1px solid #f5c6cb; 
+    border-radius: 4px;
+}
+
+/* 其他樣式 */
+.float-end {
+    text-align: right; 
+    display: block;
+    margin-top: 10px;
+}
